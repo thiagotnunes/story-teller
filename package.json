@@ -1,0 +1,16 @@
+{
+  "author": "The Teller",
+  "name": "story-teller",
+  "description": "Tells a story",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~v0.5.0-pre"
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "devDependencies": {}
+}
