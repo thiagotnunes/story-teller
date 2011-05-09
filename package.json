@@ -7,7 +7,7 @@
     "url": ""
   },
   "engines": {
-    "node": "~v0.5.0-pre"
+    "node": ">v0.5.0-pre"
   },
   "dependencies": {
     "express": "*"
