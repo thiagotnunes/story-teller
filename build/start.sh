@@ -30,6 +30,9 @@ install_npm() {
 exist_directory $NODE_SOURCE_DIR || clone_node_from_github
 exist_directory $NODE_INSTALL_DIR || install_node
 is_command_in_path 'node' || add_node_to_path
+for i in `ls ${NODE_INSTALL_DIR}/bin`; do
+    echo $i
+done
 node --version
 
 #Checking NPM
