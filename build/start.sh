@@ -1,6 +1,6 @@
 #!/bin/bash
 NODE_SOURCE_DIR='build/node'
-NODE_INSTALL_DIR=$NODE_SOURCE_DIR'/installed/'
+NODE_INSTALL_DIR=$NODE_SOURCE_DIR'/installed'
 
 # Plumbing...
 exist_directory() {
@@ -11,7 +11,7 @@ clone_node_from_github() {
 }
 install_node() {
     mkdir $NODE_INSTALL_DIR
-    export PREFIX=$PWD/$NODE_INSTALL_DIR
+    export PREFIX=$PWD/$NODE_INSTALL_DIR/
     pushd $NODE_SOURCE_DIR; ./configure
     make install
     popd
@@ -36,3 +36,4 @@ node --version
 #Checking NPM
 is_command_in_path 'npm' || install_npm
 npm --version
+
