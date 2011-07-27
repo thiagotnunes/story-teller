@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "express": "*",
-    "jasmine-node":"*"
+    "jasmine-node":"*",
+    "jade¨:"*"
   },
   "devDependencies": {}
 }

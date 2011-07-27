@@ -9,7 +9,8 @@ function storyCard(id, title) {
         return createDivTo('story', false).css('display', 'none')
         .append(createDivTo('story-id').text(id))
         .append(createDivTo('story-title').text(title))
-        .append(createDivTo('story-body'));
+        .append(createDivTo('story-body'))
+        .append(createDivTo('story-close').attr('id','close-card').text('Close'));
     };
 
     function createDivTo(class, editable) {
