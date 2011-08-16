@@ -6,11 +6,19 @@ function storyCard(id, title) {
     };
 
     self.html = function() {
+        var closeButton = createDivTo('story-close').attr('id','close-card').text('Close').click(closeCard); 
         return createDivTo('story', false).css('display', 'none')
         .append(createDivTo('story-id').text(id))
         .append(createDivTo('story-title').text(title))
         .append(createDivTo('story-body'))
-        .append(createDivTo('story-close').attr('id','close-card').text('Close'));
+        .append(closeButton);
+    };
+    
+    function closeCard() {
+        var blackBox = $('#black-box');
+        if(blackBox.is(':visible'))
+            blackBox.hide();
+        $(this).parent().hide();
     };
 
     function createDivTo(class, editable) {
@@ -19,7 +27,7 @@ function storyCard(id, title) {
         .attr('contenteditable', editable !== undefined ? editable : true);
 
         return div;
-    }
+    };
 
     return self;
 }
