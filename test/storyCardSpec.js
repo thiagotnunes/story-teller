@@ -13,12 +13,14 @@ describe("Story Card", function() {
         var storyBody = sCard.find('.story-body');
         var storyTitle = sCard.find('.story-title');
         var storyClose = sCard.find('#close-card');
+        var storySave = sCard.find('#save-card');
 
         expect(sCard.attr('class')).toBe('story');
         expect(storyId.length).toBe(1);
         expect(storyTitle.length).toBe(1);
         expect(storyBody.length).toBe(1);
         expect(storyClose.length).toBe(1);
+        expect(storySave.length).toBe(1);
         expect(storyId.attr('contenteditable')).toBe('true');
         expect(storyTitle.attr('contenteditable')).toBe('true');
         expect(storyBody.attr('contenteditable')).toBe('true');

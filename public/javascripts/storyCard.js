@@ -5,20 +5,35 @@ function storyCard(id, title) {
         body: ''
     };
 
-    self.html = function() {
-        var closeButton = createDivTo('story-close').attr('id','close-card').text('Close').click(closeCard); 
+    var saveButton = button('action-button', 'save-card', 'Save', saveAction);
+    var closeButton = button('action-button', 'close-card', 'Close', closeAction); 
+    
+    var html = function() {
         return createDivTo('story', false).css('display', 'none')
         .append(createDivTo('story-id').text(id))
         .append(createDivTo('story-title').text(title))
-        .append(createDivTo('story-body'))
+        .append(createDivTo('story-body'))                           
+        .append(saveButton)
         .append(closeButton);
+    }();                                                                         
+
+    self.html = function() {
+        return html;
+    };
+
+    function saveAction() {
+        console.log(self);
     };
     
-    function closeCard() {
+    function closeAction() {
         var blackBox = $('#black-box');
         if(blackBox.is(':visible'))
             blackBox.hide();
-        $(this).parent().hide();
+        html.hide();
+    };
+
+    function button(class, id, text, action) {
+        return createDivTo(class).attr('id', id).text(text).click(action);
     };
 
     function createDivTo(class, editable) {
