@@ -10,7 +10,8 @@
     "url": "git@github.com:thiagotnunes/story-teller.git"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "start": "node lib/server.js"
   },
   "engines": {
     "node": "0.4.x"
