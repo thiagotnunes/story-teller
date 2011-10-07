@@ -1,18 +1,22 @@
 {
-  "author": "The Teller",
   "name": "story-teller",
-  "description": "Tells a story",
+  "description": "Drive your project inception with story-teller",
+  "keywords": ["story writing", "agile", "inception"],
   "version": "0.0.1",
+  "author": "Thiago Nunes, Rafael Ferreira, Filipe Gomes Esperandio, Wagner Montalvao Camarao",
+  "homepage": "https://github.com/thiagotnunes/story-teller",
   "repository": {
-    "url": ""
+    "type": "git",
+    "url": "git@github.com:thiagotnunes/story-teller.git"
   },
   "engines": {
-    "node": ">v0.5.0-pre"
+    "node": "0.4.x"
   },
-  "dependencies": {
-    "express": "*",
-    "jasmine-node":"*",
-    "jade¨:"*"
+  "dependencies" : {
+    "express"      : "2.4.x",
+    "jade"         : "0.16.x",
+    "jasmine-node" : "1.0.x"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "main": "lib/server.js"
 }
