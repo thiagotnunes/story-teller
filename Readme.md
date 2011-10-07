@@ -16,4 +16,16 @@
     
   Client-side unit tests
   
-    TODO: http://www.sencha.com/blog/headless-testing-for-continuous-integration-with-git-and-jasmine/
+  For now, manually open in a browser: /test/jasmine-1.0.2/SpecRunner.html
+  
+  TODO: http://www.sencha.com/blog/headless-testing-for-continuous-integration-with-git-and-jasmine
+
+## Running Application
+
+  Start web server
+  
+    $ node lib/server.js
+    
+  Or use the shortcut
+  
+    $ npm start
