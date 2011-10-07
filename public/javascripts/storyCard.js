@@ -32,13 +32,13 @@ function storyCard(id, title) {
         html.hide();
     };
 
-    function button(class, id, text, action) {
-        return createDivTo(class).attr('id', id).text(text).click(action);
+    function button(className, id, text, action) {
+        return createDivTo(className).attr('id', id).text(text).click(action);
     };
 
-    function createDivTo(class, editable) {
+    function createDivTo(className, editable) {
         var div = $('<div>')
-        .attr('class', class)
+        .attr('class', className)
         .attr('contenteditable', editable !== undefined ? editable : true);
 
         return div;
