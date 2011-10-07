@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git@github.com:thiagotnunes/story-teller.git"
   },
+  "scripts": {
+    "test": "make test"
+  },
   "engines": {
     "node": "0.4.x"
   },
