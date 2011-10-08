@@ -1,0 +1,6 @@
+div#header 
+  h1=project
+
+- for story in stories
+  div
+    a(href=story.url)!=story.title
