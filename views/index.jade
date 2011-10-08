@@ -1,6 +1,6 @@
 div#header 
-    div#new-space +
-    h1 Project Name
+  h1 Projects
 
-div#content
-div#black-box
+- for project in projects
+  div
+    a(href=project.url)=project.name
