@@ -1,18 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 html {
    height: 100%;
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-   height: 100%;
+  font: 14pt "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 a {
   color: #00B7FF;
+}
+
+#content {
+    padding: 0 10px;
 }
 
 #header {
@@ -22,11 +22,16 @@ a {
 
 #header h1 {
     font-size: 22px;
-    padding: 5px;
+    padding: 15px;
+    margin: 0;
 }
 
-#content {
-    height: 95%;
+#header a {
+    color: #886746;
+}
+
+#projectForm {
+    display: none;
 }
 
 #new-space {
@@ -104,4 +109,3 @@ a {
     top: 0;
     left: 0;
 }
-

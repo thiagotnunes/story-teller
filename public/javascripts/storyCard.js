@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var blackBox = $('#black-box');
-    var card = storyCard('#', 'blahhhh').html().css('z-index', 1).appendTo($('#content'));
+    var storyTitle = $('#storyTitle').val();
+    var card = storyCard('#', storyTitle).html().css('z-index', 1).appendTo($('#content'));
 
     $('#new-space').click(showStoryCard);
 

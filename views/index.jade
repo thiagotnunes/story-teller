@@ -1,6 +1,16 @@
-div#header 
-  h1 Projects
+#header 
+  h1='Projects > '
+    a#projectLink(href='javascript:;') Add
 
-- for project in projects
-  div
-    a(href=project.url)=project.name
+#content
+
+  #projectForm
+    br
+    div Add project
+    input#projectName(type='text')
+    input#projectNextStep(type='button', value='Next Step')
+
+ul#projectList
+  - for project in projects
+    li
+      a(href=project.url)=project.name

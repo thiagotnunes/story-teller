@@ -1,6 +1,9 @@
-div#header 
-  h1=project
+#header 
+  h1
+    a(href='/') Projects
+    span=' > '+project
 
-- for story in stories
-  div
-    a(href=story.url)!=story.title
+ul#storyList
+  - for story in stories
+    li
+      a(href=story.url)=story.title
