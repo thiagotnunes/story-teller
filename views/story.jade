@@ -3,7 +3,10 @@
   h1#projectName
     a(href='/') Projects
     span=' > '
-    a(href=story.url.substr(0, story.url.indexOf('/', 1)))=story.project
+    - if (story.url)
+      a(href=story.url.substr(0, story.url.indexOf('/', 1)))=story.project
+    - else
+      span=story.project
     span=' > '+story.title
 
 input#storyTitle(type='hidden', value=story.title)
