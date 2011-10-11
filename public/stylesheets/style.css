@@ -28,6 +28,11 @@ a {
 
 #header a {
     color: #886746;
+    opacity: 0.7;
+}
+
+#header a:hover {
+    opacity: 1.0;
 }
 
 #projectForm {
@@ -77,7 +82,12 @@ a {
     font-size: 20px;
 }
 
+.action-button:hover {
+    opacity: 0.88;
+}
+
 .action-button {
+    cursor: pointer;
     background-color: #000;
     color: #666;
     padding: 5px;
@@ -96,16 +106,4 @@ a {
 #close-card {
     bottom: 0;
     right: 0;
-}
-
-#black-box {
-    display: none;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    position: absolute;
-    z-index: 0;
-    opacity: 0.3;
-    top: 0;
-    left: 0;
 }

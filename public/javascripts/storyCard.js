@@ -1,12 +1,11 @@
 $(document).ready(function() {
-    var blackBox = $('#black-box');
-    var storyTitle = $('#storyTitle').val();
-    var card = storyCard('#', storyTitle).html().css('z-index', 1).appendTo($('#content'));
+
+    var storyTitle = $('#storyTitle').val()
+      , card = storyCard('#', storyTitle).html().css('z-index', 1).appendTo($('#content'));
 
     $('#new-space').click(showStoryCard);
 
     function showStoryCard() {
-        blackBox.show();
         card.fadeIn('slow');
     }
 
@@ -15,13 +14,14 @@ $(document).ready(function() {
 
 function storyCard(id, title) {
   var self = {
-    id: id,
-    title: title,
-    body: ''
+    id: id
+   ,title: title
+   ,body: ''
   };
 
-  var saveButton = button('action-button', 'save-card', 'Save', saveAction);
-  var closeButton = button('action-button', 'close-card', 'Close', closeAction); 
+  var saveOrUpdateAction = $('#storyUrl').val() ? updateAction : saveAction
+    , saveButton = button('action-button', 'save-card', 'Save', saveOrUpdateAction)
+    , closeButton = button('action-button', 'close-card', 'Close', closeAction); 
   
   var html = function() {
     return createDivTo('story', false).css('display', 'none')
@@ -38,28 +38,33 @@ function storyCard(id, title) {
 
   function getStory() {
     return {
-      project: $('#projectName').text()
-     ,title: $('#content .story-title').text()
+      project: $('#projectName').text().replace('/', '-')
+     ,title: $('#content .story-title').text().replace('/', '-')
      ,description: $('#content .story-body').html()
+     ,url: $('#storyUrl').val() || ''
     };
   }
   
-  function updateAction() {
-    $.post('/project/story', { story: getStory(), _method: 'put' }, function(result) {
-      console.log(result);
-    });
-  }
-  
   function saveAction() {
-    $.post('/project', { story: getStory() }, function(result) {
-      console.log(result);
-    });
+    var story = getStory()
+      , url = '/'+story.project;
+    $.post(url, { story: story }, redir);
   };
   
+  function updateAction() {
+    var story = getStory()
+      , url = '/'+story.project+'/'+story.title;
+    $.post(url, { story: story, _method: 'put' }, redir);
+  }
+  
+  function redir(result) {
+    $('#content').html($('<h3>').text(result.message));
+    setTimeout(function () {
+      document.location.href = result.url;
+    }, 1234)
+  }
+  
   function closeAction() {
-    var blackBox = $('#black-box');
-    if(blackBox.is(':visible'))
-      blackBox.hide();
     html.hide();
   };
 

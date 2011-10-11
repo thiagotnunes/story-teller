@@ -1,15 +1,18 @@
 #header 
   #new-space +
-  h1#projectName
+  h1
     a(href='/') Projects
     span=' > '
     - if (story.url)
-      a(href=story.url.substr(0, story.url.indexOf('/', 1)))=story.project
+      a#projectName(href=story.url.substr(0, story.url.indexOf('/', 1)))=story.project
     - else
-      span=story.project
+      span#projectName=story.project
     span=' > '+story.title
 
 input#storyTitle(type='hidden', value=story.title)
+input#storyUrl(type='hidden', value=story.url || '')
 
 #content
-#black-box
+
+- if (message)
+  h3=message
