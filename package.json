@@ -17,7 +17,7 @@
     "node": "0.4.x"
   },
   "dependencies" : {
-    "express"      : "2.4.x",
+    "express"      : "2.5.x",
     "expresso"     : "0.9.x",
     "jade"         : "0.16.x",
     "jasmine-node" : "1.0.x",
